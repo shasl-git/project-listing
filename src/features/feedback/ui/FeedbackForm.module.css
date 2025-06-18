@@ -1,0 +1,179 @@
+.formSection {
+	max-width: 1240px;
+	margin: 100px auto;
+}
+
+.aboutForm {
+	display: flex;
+	margin: 0px
+}
+
+.imgForm {
+	display: none;
+}
+
+.formTitle {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 600;
+	font-size: 48px;
+	color: rgba(239, 243, 255, 1);
+	position: relative;
+	margin: 0;
+}
+
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	margin-top: 90px;
+}
+
+.inputGroup {
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.input {
+	flex: 1 1;
+	background-color: transparent;
+	border: 2px solid rgba(154, 168, 186, 1);
+	border-radius: 8px;
+	height: 60px;
+	padding: 0 10px;
+	color: white;
+	font-size: 20px;
+}
+
+.textarea {
+	background-color: transparent;
+	border: 2px solid rgba(154, 168, 186, 1);
+	border-radius: 8px;
+	resize: none;
+	height: 140px;
+	padding: 10px 10px 0 10px;
+	font-size: 20px;
+	color: white;
+}
+
+.checkboxLabel {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	color: rgba(239, 243, 255, 1);
+	font-size: 18px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 300;
+	gap: 12px;
+	user-select: none;
+	position: relative;
+}
+
+/* Скрываем стандартный чекбокс */
+.checkboxLabel input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 25px;
+	height: 25px;
+	border: 2px solid rgba(239, 243, 255, 1);
+	border-radius: 2px;
+	background-color: transparent;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+}
+
+/* Галочка */
+.checkboxLabel input[type="checkbox"]::after {
+	content: "";
+	position: absolute;
+	display: none;
+	left: 8px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid rgba(239, 243, 255, 1);
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+/* Показываем галочку при checked */
+.checkboxLabel input[type="checkbox"]:checked::after {
+	display: block;
+}
+
+.submit {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	background-color: rgba(45, 118, 249, 1);
+	border: none;
+	align-self: center;
+	color: white;
+	padding: 20px 65px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-radius: 85px;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.submit:disabled {
+	background-color: gray;
+	cursor: not-allowed;
+}
+
+@media (max-width: 960px) {
+	.aboutForm {
+		max-width: 350px;
+		margin: 0 auto;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+	}
+
+	.imgForm {
+		display: block;
+	}
+
+	.formTitle {
+		font-family: 'Rubik';
+		font-size: 24px;
+		font-weight: 500;
+	}
+
+	.form {
+		margin-top: 40px;
+		gap: 20px;
+	}
+
+	.inputGroup {
+		flex-direction: column;
+		gap: 20px;
+		margin: 0 25px;
+	}
+
+	.input {
+		padding: 15px 10px;
+	}
+
+	.textarea {
+		margin: 0 25px;
+	}
+
+	.checkboxLabel {
+		margin: 0 25px;
+	}
+
+	.submit {
+		padding: 15px 125px;
+	}
+}
+
+@media (max-width: 400px) {
+	.submit {
+		padding: 10px 0;
+		width: 100%;
+		max-width: 330px;
+	}
+}
