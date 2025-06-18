@@ -83,7 +83,7 @@ export function FeedbackForm() {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
           <input
-            type="text"
+            type="name"
             name="name"
             placeholder="Ваше имя*"
             value={formData.name}
@@ -107,7 +107,7 @@ export function FeedbackForm() {
             value={formData.phone}
             onChange={handleChange}
             className={styles.input}
-            autoComplete="tel"
+            autoComplete="phone"
           />
         </div>
 

@@ -70,7 +70,7 @@
 	position: relative;
 }
 
-/* Скрываем стандартный чекбокс */
+
 .checkboxLabel input[type="checkbox"] {
 	appearance: none;
 	-webkit-appearance: none;
@@ -85,7 +85,6 @@
 	cursor: pointer;
 }
 
-/* Галочка */
 .checkboxLabel input[type="checkbox"]::after {
 	content: "";
 	position: absolute;
@@ -99,7 +98,6 @@
 	transform: rotate(45deg);
 }
 
-/* Показываем галочку при checked */
 .checkboxLabel input[type="checkbox"]:checked::after {
 	display: block;
 }
