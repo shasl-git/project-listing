@@ -1,6 +1,9 @@
 body {
 	font-family: 'Fira Sans Condensed', sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: rgb(37, 37, 47);
+
+	background: linear-gradient(180deg,
+			rgba(36, 37, 47, 1) 0%,
+			rgba(49, 49, 63, 1) 50%,
+			rgba(36, 37, 48, 1) 100%);
+	overflow-x: hidden;
 }

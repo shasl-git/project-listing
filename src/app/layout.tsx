@@ -19,6 +19,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body>{children}</body>
     </html>
