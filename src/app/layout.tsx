@@ -1,8 +1,14 @@
 import type { ReactNode } from "react";
 import "./globals.css";
+import { Header } from "@/widgets/Header/ui/Header";
+import { Footer } from "@/widgets/Footer/ui/Footer";
+
 export const metadata = {
-  title: "Project Listing",
+  title: "Project Cyberia",
   description: "Список проектов",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -24,7 +30,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

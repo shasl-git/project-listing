@@ -13,6 +13,10 @@ export function FeedbackForm() {
     agree: false,
   });
 
+  const [validationErrors, setValidationErrors] = useState<
+    Partial<Record<keyof FeedbackFormData, string>>
+  >({});
+
   const [isSending, setIsSending] = useState(false);
 
   function handleChange(
@@ -29,6 +33,27 @@ export function FeedbackForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setIsSending(true);
+    setValidationErrors({});
+
+    if (!formData.name.trim() || !formData.message.trim()) {
+      setValidationErrors((prev) => ({
+        ...prev,
+        name: !formData.name.trim() ? "Имя обязательно" : undefined,
+        message: !formData.message.trim() ? "Сообщение обязательно" : undefined,
+      }));
+      setIsSending(false);
+      return;
+    }
+
+    if (!formData.email.trim() && !formData.phone.trim()) {
+      setValidationErrors((prev) => ({
+        ...prev,
+        email: "Укажите email или телефон",
+        phone: "Укажите телефон или email",
+      }));
+      setIsSending(false);
+      return;
+    }
 
     try {
       const response = await fetch(
@@ -44,9 +69,17 @@ export function FeedbackForm() {
 
       const result = await response.json();
 
+      if (response.status === 422) {
+        if (result.errors) {
+          setValidationErrors(result.errors);
+        } else {
+          alert("Ошибка валидации:\n" + JSON.stringify(result));
+        }
+        return;
+      }
+
       if (!response.ok) {
-        console.error("Ошибка валидации:", result.errors);
-        alert("Ошибка при отправке:\n" + JSON.stringify(result.errors));
+        alert("Ошибка: " + result.message);
         return;
       }
 
@@ -70,7 +103,7 @@ export function FeedbackForm() {
     <div className={styles.formSection}>
       <div className={styles.aboutForm}>
         <img
-          src="\logo\Group_1347.png"
+          src="/logo/Group_1347.png"
           alt="about_Project"
           className={styles.imgForm}
         />
@@ -83,7 +116,7 @@ export function FeedbackForm() {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
           <input
-            type="name"
+            type="text"
             name="name"
             placeholder="Ваше имя*"
             value={formData.name}
@@ -91,6 +124,10 @@ export function FeedbackForm() {
             className={styles.input}
             autoComplete="name"
           />
+          {validationErrors.name && (
+            <p className={styles.error}>{validationErrors.name}</p>
+          )}
+
           <input
             type="email"
             name="email"
@@ -100,6 +137,10 @@ export function FeedbackForm() {
             className={styles.input}
             autoComplete="email"
           />
+          {validationErrors.email && (
+            <p className={styles.error}>{validationErrors.email}</p>
+          )}
+
           <input
             type="tel"
             name="phone"
@@ -107,8 +148,11 @@ export function FeedbackForm() {
             value={formData.phone}
             onChange={handleChange}
             className={styles.input}
-            autoComplete="phone"
+            autoComplete="tel"
           />
+          {validationErrors.phone && (
+            <p className={styles.error}>{validationErrors.phone}</p>
+          )}
         </div>
 
         <textarea
@@ -118,6 +162,9 @@ export function FeedbackForm() {
           onChange={handleChange}
           className={styles.textarea}
         />
+        {validationErrors.message && (
+          <p className={styles.error}>{validationErrors.message}</p>
+        )}
 
         <label className={styles.checkboxLabel}>
           <input

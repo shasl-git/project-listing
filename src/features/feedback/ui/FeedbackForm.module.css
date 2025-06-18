@@ -1,3 +1,9 @@
+.error {
+	color: red;
+	font-size: 0.875rem;
+	margin: 4px 0 8px;
+}
+
 .formSection {
 	max-width: 1240px;
 	margin: 100px auto;
