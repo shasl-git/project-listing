@@ -7,7 +7,7 @@
 .container {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	gap: 200px;
 	position: relative;
 }
 
@@ -109,6 +109,11 @@
 
 
 @media (max-width: 768px) {
+	.container {
+		justify-content: space-between;
+		gap: 0;
+	}
+
 	.nav {
 		display: none;
 	}

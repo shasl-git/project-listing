@@ -1,0 +1,31 @@
+.breadcrumbs {
+	max-width: 1240px;
+	margin: 0 auto 130px auto;
+	color: white;
+}
+
+.link,
+.linkDiz {
+	color: rgba(154, 168, 186, 1);
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 400;
+	transition: opacity 0.4s ease;
+	cursor: pointer;
+}
+
+.link:hover {
+	opacity: 0.6;
+}
+
+@media (max-width: 960px) {
+	.breadcrumbs {
+		margin-bottom: 30px;
+	}
+
+	.link,
+	.linkDiz {
+		font-size: 12px;
+		font-weight: 300;
+	}
+}

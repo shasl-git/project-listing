@@ -13,6 +13,10 @@ export function ProjectCard({ project }: Props) {
     >
       <div className={styles.cardZone}>
         <h2 className={styles.title}>{project.title}</h2>
+        <div className={styles.titleText}>
+          Онлайн гипермаркет. Для компании были разработаны сайт и мобильное
+          приложение и т.д.
+        </div>
       </div>
     </div>
   );

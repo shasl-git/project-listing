@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Header } from "@/widgets/Header/ui/Header";
 import { Footer } from "@/widgets/Footer/ui/Footer";
+import { Breadcrumbs } from "@/widgets/Breadcrumbs/ui/Breadcrumbs";
 
 export const metadata = {
   title: "Project Cyberia",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Header />
+        <Breadcrumbs />
         {children}
         <Footer />
       </body>

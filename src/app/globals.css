@@ -7,3 +7,13 @@ body {
 			rgba(36, 37, 48, 1) 100%);
 	overflow-x: hidden;
 }
+
+@media (max-width: 768px) {
+	body {
+		background: linear-gradient(180deg,
+				rgba(36, 37, 47, 1)0%,
+				rgba(36, 37, 47, 1)10%,
+				rgba(49, 49, 63, 1) 25%,
+				rgba(36, 37, 48, 1) 100%);
+	}
+}
