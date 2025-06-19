@@ -53,11 +53,17 @@ REST API
 ## 📁 Project Structure
 
 /app
+
 /entities
+
 /features
+
 /shared
+
 /widgets
+
 /pages
+
 /public
 
 # Русский язык
@@ -114,10 +120,17 @@ Prettier
 REST API
 
 ## 📁 Структура проекта
+
 /app
+
 /entities
+
 /features
+
 /shared
+
 /widgets
+
 /pages
+
 /public
