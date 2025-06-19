@@ -1,3 +1,4 @@
+# English 
 # Cyberia Projects — Next.js App
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with `create-next-app`.
@@ -59,7 +60,7 @@ REST API
 /pages
 /public
 
-### Русский язык
+# Русский язык
 
 ## Cyberia Projects — приложение на Next.js
 
