@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-#📚 About Project
+## 📚 About Project
 The API was used to work with the page data: https://api.test.cyberia.studio/api/v1
 
 A GET request to project was used to get project data
@@ -59,7 +59,7 @@ REST API
 /pages
 /public
 
-Русский язык
+### Русский язык
 
 ## Cyberia Projects — приложение на Next.js
 
